@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
 
+import Layout from "./hocs/Layout";
+
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import UserGroup from "./pages/UserGroup";
+import Login from "./pages/Login";
+import SolarSystemMap from "./pages/SolarSystemMap";
+import PlanetView from "./pages/PlanetView";
+import CardDetails from "./pages/CardDetails";
+import MyShip from "./pages/MyShip";
+import Flight from "./pages/Flight";
+
+import NavBar from "./components/Navbar";
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [userData, setUserData] = useState({});
+
+  const user = true;
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main className="App">
+      {user ? (
+        <>
+          <div className="full-page">
+            <NavBar userData={userData} setUserData={setUserData} />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/register" element={<Register />} />
+              <Route
+                path="/login"
+                element={<Login setUserData={setUserData} />}
+              />
+              <Route path="/dorm" element={<UserGroup />} />
+              <Route path="/map" element={<SolarSystemMap />} />
+              <Route path="/ship" element={<MyShip />} />
+              <Route path="/ship/flight" element={<Flight />} />
+              <Route
+                path="/map/:planetName/:categoryId"
+                element={<PlanetView />}
+              />
+              <Route
+                path="/map/:planetName/:categoryId/:cardId"
+                element={<CardDetails />}
+              />
+            </Routes>
+          </div>
+        </>
+      ) : (
+        <Login />
+      )}
+    </main>
+  );
 }
 
-export default App
+export default App;

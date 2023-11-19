@@ -1,0 +1,29 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #363636;
+  color: white;
+  height: 60px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+}
+
+.link {
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+
+.logout {
+  padding: 5px;
+  border: none;
+  background-color: #363636;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
