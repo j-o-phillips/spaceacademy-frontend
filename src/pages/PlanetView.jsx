@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
+import Tilt from "react-parallax-tilt";
 import ChooseCat from "../components/ChooseCat";
 import { Link, useParams } from "react-router-dom";
+
+import "../assets/css/PlanetView.css";
 
 const PlanetView = () => {
   const [categories, setCategories] = useState([]);
   const [datacards, setDataCards] = useState([]);
+  const [categoryId, setCategoryId] = useState("");
   const { planetName } = useParams();
 
   useEffect(() => {
@@ -52,25 +56,33 @@ const PlanetView = () => {
 
   return (
     <div>
-      {categories.map((category) => (
-        <button
-          key={category.id}
-          onClick={() => {
-            getDataCards(category.id);
-          }}
-        >
-          {category.name}
-        </button>
-      ))}
-      {datacards.map((datacard) => (
-        <Link to={`${datacard.id}`}>
-          <Card style={{ width: "18rem" }}>
-            <Card.Title>{datacard.title}</Card.Title>
-            <Card.Subtitle>Value: {datacard.reward_credits}</Card.Subtitle>
-            <Card.Subtitle>Exp: {datacard.reward_exp}</Card.Subtitle>
-          </Card>
-        </Link>
-      ))}
+      <nav className="choose-cat">
+        {categories.map((category) => (
+          <button
+            className="choose-cat-btn"
+            key={category.id}
+            onClick={() => {
+              setCategoryId(category.id);
+              getDataCards(category.id);
+            }}
+          >
+            <div className="choose-cat-btn-txt">{category.name}</div>
+          </button>
+        ))}
+      </nav>
+      <div className="datacard-container">
+        {datacards.map((datacard) => (
+          <Tilt className="datacard">
+            <Link className="datacard-link" to={`${categoryId}/${datacard.id}`}>
+              <div className="datacard-details">
+                <div>{datacard.title}</div>
+                <div>Value: {datacard.reward_credits}</div>
+                <div>Exp: {datacard.reward_exp}</div>
+              </div>
+            </Link>
+          </Tilt>
+        ))}
+      </div>
     </div>
   );
 };

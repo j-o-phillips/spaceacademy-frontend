@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setUserData }) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
@@ -33,6 +35,7 @@ const Login = ({ setUserData }) => {
     localStorage.setItem("auth_token", result.token);
     setUserData(result);
     console.log(result);
+    navigate("/dorm");
   };
 
   // const checkAuth = async () => {
@@ -46,7 +49,7 @@ const Login = ({ setUserData }) => {
   // };
 
   return (
-    <div>
+    <div className="container d-flex flex-column align-items-center justify-content-center h-100 text-white register-cont">
       <h1>Login</h1>
 
       <input
@@ -63,7 +66,9 @@ const Login = ({ setUserData }) => {
           setPassword(e.target.value);
         }}
       />
-      <button onClick={handleLogin}>Login User</button>
+      <button onClick={handleLogin}>
+        <div>Login User</div>
+      </button>
     </div>
   );
 };

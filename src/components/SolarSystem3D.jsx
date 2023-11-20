@@ -9,10 +9,10 @@ import Planet5 from "./planets/Planet5";
 import Planet6 from "./planets/Planet6";
 import Planet7 from "./planets/Planet7";
 
-const SolarSystem3D = () => {
+const SolarSystem3D = ({ setCurrentPlanet }) => {
   return (
     <>
-      <Perf position="top-left" />
+      {/* <Perf position="top-left" /> */}
       <OrbitControls />
       <ambientLight intensity={0.7} />
       <pointLight intensity={7} decay={0.2} />
@@ -25,13 +25,13 @@ const SolarSystem3D = () => {
         fade
       />
       <Sun />
-      <Planet1 />
-      <Planet2 />
-      <Planet3 />
-      <Planet4 />
-      <Planet5 />
-      <Planet7 />
-      <Planet6 />
+      <Planet1 setCurrentPlanet={setCurrentPlanet} />
+      <Planet2 setCurrentPlanet={setCurrentPlanet} />
+      <Planet3 setCurrentPlanet={setCurrentPlanet} />
+      <Planet4 setCurrentPlanet={setCurrentPlanet} />
+      <Planet5 setCurrentPlanet={setCurrentPlanet} />
+      <Planet7 setCurrentPlanet={setCurrentPlanet} />
+      <Planet6 setCurrentPlanet={setCurrentPlanet} />
     </>
   );
 };

@@ -1,0 +1,20 @@
+.register-cont > h1 {
+  margin: 3vmin;
+}
+
+.register-cont > input {
+  margin: 1vmin;
+}
+
+.register-cont > button {
+  margin: 1vmin;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  transform: skewX(-20deg);
+  padding: 0 15px;
+}
+
+.register-cont > button > div {
+  transform: skewX(20deg);
+}

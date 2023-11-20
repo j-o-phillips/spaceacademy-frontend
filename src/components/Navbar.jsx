@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
 import "../assets/css/NavBar.css";
 
 const Navbar = ({ userData, setUserData }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const value = useContext(ProfileContext);
 
   useEffect(() => {
     const auth_token = localStorage.getItem("auth_token");
     if (auth_token) setIsLoggedIn(true);
     else setIsLoggedIn(false);
   }, [userData]);
-  //Placeholder
-  const session = {
-    status: "authenticated",
-  };
 
   const logOut = async () => {
     const authToken = localStorage.getItem("auth_token");
@@ -61,7 +59,7 @@ const Navbar = ({ userData, setUserData }) => {
       <div className="userCred">
         {isLoggedIn && (
           <button className="logout" onClick={logOut}>
-            Log Out
+            <div>Log Out</div>
           </button>
         )}
         {!isLoggedIn && (

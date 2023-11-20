@@ -1,0 +1,40 @@
+.choose-cat {
+  display: flex;
+  justify-content: center;
+}
+
+.choose-cat-btn {
+  margin: 10px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  transform: skewX(-20deg);
+}
+
+.choose-cat-btn-txt {
+  transform: skewX(20deg);
+}
+
+.datacard-container {
+  display: flex;
+}
+
+.datacard {
+  border: 2px solid white;
+  margin: 10px;
+  width: 15rem;
+  height: 15rem;
+}
+
+.datacard-link {
+  color: white;
+  text-decoration: none;
+}
+
+.datacard-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}

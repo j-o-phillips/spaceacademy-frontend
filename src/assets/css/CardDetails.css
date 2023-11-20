@@ -1,0 +1,65 @@
+.accordion-container {
+  display: flex;
+  justify-content: center;
+}
+
+.accordion {
+  margin-top: 20px;
+  width: 75vw;
+  background-color: #363636;
+}
+
+.accordion-item {
+  margin: 5px;
+  background-color: #363636;
+  color: white;
+}
+
+.accordion-header {
+  background-color: #363636;
+}
+
+.accordion-body-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-body {
+  display: flex;
+  justify-content: center;
+}
+
+.accordion-input {
+  margin: 0 5px;
+}
+
+.accordion-input > input {
+  margin: 3px;
+}
+
+.accordion-body-container > button {
+  transform: skewX(-20deg);
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.accordion-body-container > button > div {
+  transform: skewX(20deg);
+}
+
+.unlock-datacard-container {
+  display: flex;
+  justify-content: center;
+}
+.unlock-datacard {
+  transform: skewX(-20deg);
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  margin-top: 20px;
+}
+
+.unlock-datacard > div {
+  transform: skewX(20deg);
+}

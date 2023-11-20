@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useLoader, useFrame, useThree } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 
-const Planet7 = () => {
+const Planet7 = ({ setCurrentPlanet }) => {
   const colorMap = useLoader(TextureLoader, "solarsystem/planet7.jpg");
   const planet7Mesh = useRef();
   const { gl } = useThree();
@@ -14,11 +14,22 @@ const Planet7 = () => {
     planet7Mesh.current.position.z = Math.cos(angle * 0.1) * 20;
   });
 
+  const handleSelect = () => {
+    setCurrentPlanet({
+      frontendName: "Music Planet",
+      djangoName: "music",
+    });
+  };
+
   return (
     <>
       <mesh
         ref={planet7Mesh}
         scale={0.4}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleSelect();
+        }}
         onPointerEnter={() => {
           gl.domElement.style.cursor = "pointer";
         }}

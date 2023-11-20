@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "../assets/css/Register.css";
+
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -35,8 +37,8 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
+    <div className="container d-flex flex-column align-items-center justify-content-center h-100 text-white register-cont">
+      <h1>Sign up</h1>
       <input
         type="text"
         value={username}
@@ -59,7 +61,9 @@ const Register = () => {
           setRePassword(e.target.value);
         }}
       />
-      <button onClick={handleRegister}>Register User</button>
+      <button onClick={handleRegister}>
+        <div>Register User</div>
+      </button>
     </div>
   );
 };

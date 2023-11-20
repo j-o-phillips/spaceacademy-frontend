@@ -13,6 +13,7 @@ import PlanetView from "./pages/PlanetView";
 import CardDetails from "./pages/CardDetails";
 import MyShip from "./pages/MyShip";
 import Flight from "./pages/Flight";
+import { createContext, useContext } from "react";
 
 import NavBar from "./components/Navbar";
 function App() {
@@ -38,10 +39,7 @@ function App() {
               <Route path="/map" element={<SolarSystemMap />} />
               <Route path="/ship" element={<MyShip />} />
               <Route path="/ship/flight" element={<Flight />} />
-              <Route
-                path="/map/:planetName/:categoryId"
-                element={<PlanetView />}
-              />
+              <Route path="/map/:planetName" element={<PlanetView />} />
               <Route
                 path="/map/:planetName/:categoryId/:cardId"
                 element={<CardDetails />}
