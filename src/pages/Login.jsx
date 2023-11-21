@@ -38,16 +38,6 @@ const Login = ({ setUserData }) => {
     navigate("/dorm");
   };
 
-  // const checkAuth = async () => {
-  //   const response = await fetch("http://127.0.0.1:8000/learn/authenticated/");
-  //   if (!response.ok) {
-  //     throw new Error("An error in the response");
-  //   }
-
-  //   const result = await response.json();
-  //   console.log(result);
-  // };
-
   return (
     <div className="container d-flex flex-column align-items-center justify-content-center h-100 text-white register-cont">
       <h1>Login</h1>

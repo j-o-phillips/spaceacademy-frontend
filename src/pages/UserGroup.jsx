@@ -5,9 +5,14 @@ import { Link } from "react-router-dom";
 import "../assets/css/UserGroup.css";
 import { useProfileContext } from "../context/ProfileContext";
 import { getUserProfileFunc } from "../controllers/userProfile";
+import AllGroups from "../components/AllGroups";
+import GroupMembers from "../components/GroupMembers";
+import Posts from "../components/Posts";
 
 const UserGroup = () => {
   const [userProfile, setUserProfile] = useState("");
+  const [hangarMembers, setHangarMembers] = useState([]);
+  const [currentHangarId, setCurrentHangarId] = useState("");
   const { profileData, setProfileData } = useProfileContext();
 
   useEffect(() => {
@@ -25,22 +30,22 @@ const UserGroup = () => {
 
   return (
     <div className="dorm-container">
-      <h1>My Dormitory</h1>
-      <div className="d-flex">
-        <Tilt className="profile-card">
-          <div className="profile-card-details">
-            {userProfile && (
-              <>
-                <h3>{userProfile.username}</h3>
-                <p>First name: {userProfile.profile.first_name} </p>
-                <p>Surname: {userProfile.profile.last_name}</p>
-                <p>Credits: {userProfile.profile.credits}</p>
-                <p>Exp: {userProfile.profile.experience}</p>
-                <p>Prestige: {userProfile.profile.prestige}</p>
-              </>
-            )}
-          </div>
-        </Tilt>
+      <div className="all-groups-container">
+        <AllGroups
+          setHangarMembers={setHangarMembers}
+          setCurrentHangarId={setCurrentHangarId}
+        />
+      </div>
+      <div className="member-post-container">
+        <div className="member-container">
+          <GroupMembers
+            hangarMembers={hangarMembers}
+            currentHangarId={currentHangarId}
+          />
+        </div>
+        <div className="post-container">
+          <Posts currentHangarId={currentHangarId} />
+        </div>
       </div>
     </div>
   );

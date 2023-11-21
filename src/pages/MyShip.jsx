@@ -11,7 +11,7 @@ const MyShip = () => {
     <div className="container d-flex justify-content-around align-items-center h-100">
       <ShipDetails />
       <div className="canvas-container">
-        <Canvas camera={{ position: [800, 500, 0], fov: 25 }}>
+        <Canvas camera={{ position: [-263, 513, 318], fov: 25 }}>
           <OrbitControls />
           <ambientLight intensity={1} />
           <directionalLight intensity={10} />

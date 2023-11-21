@@ -1,0 +1,51 @@
+.user-post {
+  flex: 1;
+}
+
+.posts {
+  flex: 1;
+}
+
+.post-card {
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 40vmin;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.post-card > h5 {
+  width: 65%;
+  text-decoration: underline;
+}
+
+.post-card > h7 {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+}
+
+.post-card > p {
+  width: 70%;
+}
+
+.post-card > button {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 50%;
+  margin-top: 5px;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-card > button > div {
+  margin-bottom: 3px;
+}
