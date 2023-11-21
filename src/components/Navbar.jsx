@@ -1,17 +1,45 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import "../assets/css/NavBar.css";
+import { useProfileContext } from "../context/ProfileContext";
 
 const Navbar = ({ userData, setUserData }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const value = useContext(ProfileContext);
+  const navigate = useNavigate();
+  const { profileData, setProfileData } = useProfileContext();
 
   useEffect(() => {
     const auth_token = localStorage.getItem("auth_token");
     if (auth_token) setIsLoggedIn(true);
     else setIsLoggedIn(false);
   }, [userData]);
+
+  useEffect(() => {
+    const auth_token = localStorage.getItem("auth_token");
+
+    const getUserProfile = async () => {
+      const auth_token = localStorage.getItem("auth_token");
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/learn/user/`,
+        {
+          headers: {
+            Authorization: "Token " + auth_token,
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("An error in the response");
+      }
+
+      const result = await response.json();
+      setProfileData(result);
+      console.log(result);
+    };
+    if (auth_token) {
+      getUserProfile();
+    }
+  }, []);
 
   const logOut = async () => {
     const authToken = localStorage.getItem("auth_token");
@@ -29,7 +57,10 @@ const Navbar = ({ userData, setUserData }) => {
     localStorage.removeItem("auth_token");
     const result = await response.json();
     setUserData("");
+    setProfileData("");
+    setIsLoggedIn(false);
     console.log(result);
+    navigate("/");
   };
   return (
     <div className="nav-container">
@@ -41,34 +72,45 @@ const Navbar = ({ userData, setUserData }) => {
         {isLoggedIn && (
           <>
             <NavLink to="/dorm" className="link">
-              Dormitory
+              <div className="nav-txt">Dormitory</div>
             </NavLink>
             <NavLink to="/map" className="link">
-              Map
+              <div className="nav-txt">Map</div>
             </NavLink>
             <NavLink to="/ship" className="link">
-              Ship
+              <div className="nav-txt">Ship</div>
             </NavLink>
             <NavLink to="/help" className="link">
-              Help
+              <div className="nav-txt">Help</div>
             </NavLink>
           </>
         )}
       </div>
-      <p>{userData.username}</p>
+
       <div className="userCred">
         {isLoggedIn && (
-          <button className="logout" onClick={logOut}>
-            <div>Log Out</div>
-          </button>
+          <div className="usercred-container">
+            {profileData && (
+              <>
+                <p>username: {profileData.username}</p>
+                <p>credits: {profileData.profile.credits}</p>
+                <p>experience: {profileData.profile.experience}</p>
+                <p>prestige: {profileData.profile.prestige}</p>
+              </>
+            )}
+
+            <button className="logout" onClick={logOut}>
+              <div>Log Out</div>
+            </button>
+          </div>
         )}
         {!isLoggedIn && (
           <>
             <NavLink to="/register" className="link">
-              Sign up
+              <div className="nav-txt">Sign up</div>
             </NavLink>
             <NavLink to="/login" className="link">
-              Login
+              <div className="nav-txt">Login</div>
             </NavLink>
           </>
         )}

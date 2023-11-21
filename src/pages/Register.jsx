@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
 import "../assets/css/Register.css";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleRegister = async () => {
     const data = {
@@ -34,6 +37,7 @@ const Register = () => {
 
     const result = await response.json();
     console.log(result);
+    navigate("/login");
   };
 
   return (

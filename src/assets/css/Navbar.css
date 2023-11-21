@@ -12,17 +12,24 @@
   font-weight: bold;
   font-size: 22px;
   color: white;
-  margin-left: 5px;
+  margin: 10px;
 }
 
 .link {
   align-items: center;
-  margin: 5px;
+  margin: 10px;
   color: white;
   text-decoration: none;
-
+  display: inline-block;
   border: 2px solid white;
   transform: skewX(-20deg);
+}
+
+.nav-txt {
+  transform: skewX(20deg);
+  padding: 0 2vmin;
+  text-decoration: none;
+  color: white;
 }
 
 .logout {
@@ -39,4 +46,14 @@
 .logout > div {
   transform: skewX(20deg);
   padding: 0 5px;
+}
+
+.usercred-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.usercred-container > p {
+  margin: 10px;
 }

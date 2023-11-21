@@ -4,3 +4,25 @@
   align-items: center;
   color: white;
 }
+
+.profile-card {
+  border: 2px solid white;
+  margin: 10px;
+  width: 15rem;
+  height: 15rem;
+  box-shadow: 5px 5px 5px red;
+  border-radius: 10px;
+}
+
+.profile-card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+}
+
+.profile-card-details > h3 {
+  margin-bottom: 10px 0;
+}

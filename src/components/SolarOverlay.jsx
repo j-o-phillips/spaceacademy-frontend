@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 const SolarOverlay = ({ currentPlanet }) => {
   return (
     <div className="overlay">
-      <h4>Planet: {currentPlanet.frontendName}</h4>
-      <Link to={`${currentPlanet.djangoName}`}>Land</Link>
+      <h4 className="my-3">Planet: {currentPlanet.frontendName}</h4>
+      <p>Cards discovered: Unknown </p>
+      <p>Cards left to discover: Unknown </p>
+      <Link to={`${currentPlanet.djangoName}`} className="link my-4">
+        <div className="nav-txt">Land</div>
+      </Link>
     </div>
   );
 };

@@ -55,7 +55,7 @@ const PlanetView = () => {
   };
 
   return (
-    <div>
+    <div className="d-flex flex-column">
       <nav className="choose-cat">
         {categories.map((category) => (
           <button
@@ -70,9 +70,12 @@ const PlanetView = () => {
           </button>
         ))}
       </nav>
+      <h3 className="align-self-center text-white my-4">
+        Datacards left to discover:
+      </h3>
       <div className="datacard-container">
         {datacards.map((datacard) => (
-          <Tilt className="datacard">
+          <Tilt className="datacard" key={datacard.id}>
             <Link className="datacard-link" to={`${categoryId}/${datacard.id}`}>
               <div className="datacard-details">
                 <div>{datacard.title}</div>

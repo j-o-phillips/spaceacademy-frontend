@@ -19,7 +19,7 @@ const SolarSystem3D = ({ setCurrentPlanet }) => {
       <Stars
         radius={80}
         depth={50}
-        count={3000}
+        count={5000}
         factor={6}
         saturation={0}
         fade
