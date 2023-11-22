@@ -44,12 +44,15 @@ const Navbar = ({ userData, setUserData }) => {
   const logOut = async () => {
     const authToken = localStorage.getItem("auth_token");
     console.log(authToken);
-    const response = await fetch("http://127.0.0.1:8000/learn/logout/", {
-      method: "POST",
-      headers: {
-        Authorization: `Token ${authToken}`,
-      },
-    });
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/learn/logout`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Token ${authToken}`,
+        },
+      }
+    );
     if (!response.ok) {
       throw new Error("An error in the response");
     }

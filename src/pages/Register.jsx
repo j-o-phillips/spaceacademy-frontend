@@ -17,20 +17,23 @@ const Register = () => {
       re_password: rePassword,
     };
 
-    const response = await fetch("http://127.0.0.1:8000/learn/register/", {
-      method: "POST",
-      headers: {
-        Authorization:
-          "Basic " +
-          btoa(
-            `${import.meta.env.VITE_APP_USER}:${
-              import.meta.env.VITE_APP_PASSWORD
-            }`
-          ),
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/learn/register`,
+      {
+        method: "POST",
+        headers: {
+          Authorization:
+            "Basic " +
+            btoa(
+              `${import.meta.env.VITE_APP_USER}:${
+                import.meta.env.VITE_APP_PASSWORD
+              }`
+            ),
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
     if (!response.ok) {
       throw new Error("An error in the response");
     }

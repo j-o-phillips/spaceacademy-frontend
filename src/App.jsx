@@ -13,43 +13,35 @@ import PlanetView from "./pages/PlanetView";
 import CardDetails from "./pages/CardDetails";
 import MyShip from "./pages/MyShip";
 import Flight from "./pages/Flight";
-import { createContext, useContext } from "react";
 
 import NavBar from "./components/Navbar";
 function App() {
-  const [count, setCount] = useState(0);
   const [userData, setUserData] = useState({});
-
-  const user = true;
 
   return (
     <main className="App">
-      {user ? (
-        <>
-          <div className="full-page">
-            <NavBar userData={userData} setUserData={setUserData} />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/register" element={<Register />} />
-              <Route
-                path="/login"
-                element={<Login setUserData={setUserData} />}
-              />
-              <Route path="/dorm" element={<UserGroup />} />
-              <Route path="/map" element={<SolarSystemMap />} />
-              <Route path="/ship" element={<MyShip />} />
-              <Route path="/ship/flight" element={<Flight />} />
-              <Route path="/map/:planetName" element={<PlanetView />} />
-              <Route
-                path="/map/:planetName/:categoryId/:cardId"
-                element={<CardDetails />}
-              />
-            </Routes>
-          </div>
-        </>
-      ) : (
-        <Login />
-      )}
+      <>
+        <div className="full-page">
+          <NavBar userData={userData} setUserData={setUserData} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/login"
+              element={<Login setUserData={setUserData} />}
+            />
+            <Route path="/dorm" element={<UserGroup />} />
+            <Route path="/map" element={<SolarSystemMap />} />
+            <Route path="/ship" element={<MyShip />} />
+            <Route path="/ship/flight" element={<Flight />} />
+            <Route path="/map/:planetName" element={<PlanetView />} />
+            <Route
+              path="/map/:planetName/:categoryId/:cardId"
+              element={<CardDetails />}
+            />
+          </Routes>
+        </div>
+      </>
     </main>
   );
 }
