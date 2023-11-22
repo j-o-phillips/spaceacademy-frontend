@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { login } from "../controllers/auth";
 
 const Login = ({ setUserData }) => {
   const navigate = useNavigate();
@@ -12,28 +13,7 @@ const Login = ({ setUserData }) => {
       password: password,
     };
 
-    const response = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/learn/login/`,
-      {
-        method: "POST",
-        headers: {
-          Authorization:
-            "Basic " +
-            btoa(
-              `${import.meta.env.VITE_APP_USER}:${
-                import.meta.env.VITE_APP_PASSWORD
-              }`
-            ),
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
-    if (!response.ok) {
-      throw new Error("An error in the response");
-    }
-
-    const result = await response.json();
+    const result = await login(data);
 
     localStorage.setItem("auth_token", result.token);
     setUserData(result);

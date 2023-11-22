@@ -103,8 +103,8 @@ const Posts = ({ currentHangarId }) => {
           onChange={(e) => setUserPost(e.target.value)}
         ></textarea>
 
-        <button className="link bg-transparent" onClick={submitPost}>
-          <div className="nav-txt">Post</div>
+        <button className="button bg-transparent my-2" onClick={submitPost}>
+          <div className="button-txt">Post</div>
         </button>
       </div>
       <div className="posts d-flex flex-column align-items-center mt-2">

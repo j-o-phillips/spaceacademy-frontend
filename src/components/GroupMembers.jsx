@@ -70,11 +70,17 @@ const GroupMembers = ({ hangarMembers, currentHangarId }) => {
       </div>
       {currentHangarId && (
         <div>
-          <button className="link bg-transparent mb-4" onClick={joinHangar}>
-            <div className="nav-txt">Join Hangar</div>
+          <button
+            className="button bg-transparent mb-4 mx-3"
+            onClick={joinHangar}
+          >
+            <div className="button-txt">Join Hangar</div>
           </button>
-          <button className="link bg-transparent mb-4" onClick={leaveHangar}>
-            <div className="nav-txt">Leave Hangar</div>
+          <button
+            className="button bg-transparent mb-4 mx-3"
+            onClick={leaveHangar}
+          >
+            <div className="button-txt">Leave Hangar</div>
           </button>
         </div>
       )}

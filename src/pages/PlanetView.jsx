@@ -59,14 +59,14 @@ const PlanetView = () => {
       <nav className="choose-cat">
         {categories.map((category) => (
           <button
-            className="choose-cat-btn"
+            className="button mx-3 mt-3"
             key={category.id}
             onClick={() => {
               setCategoryId(category.id);
               getDataCards(category.id);
             }}
           >
-            <div className="choose-cat-btn-txt">{category.name}</div>
+            <div className="button-txt">{category.name}</div>
           </button>
         ))}
       </nav>

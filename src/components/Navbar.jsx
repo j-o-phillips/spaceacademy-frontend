@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import "../assets/css/Navbar.css";
 import { useProfileContext } from "../context/ProfileContext";
+import { logout } from "../controllers/auth";
 
 const Navbar = ({ userData, setUserData }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -43,26 +44,14 @@ const Navbar = ({ userData, setUserData }) => {
 
   const logOut = async () => {
     const authToken = localStorage.getItem("auth_token");
-    console.log(authToken);
-    const response = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/learn/logout/`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Token ${authToken}`,
-        },
-      }
-    );
-    if (!response.ok) {
-      throw new Error("An error in the response");
-    }
+
+    const result = await logout(authToken);
 
     localStorage.removeItem("auth_token");
-    const result = await response.json();
     setUserData("");
     setProfileData("");
     setIsLoggedIn(false);
-    console.log(result);
+
     navigate("/");
   };
   return (
@@ -74,14 +63,14 @@ const Navbar = ({ userData, setUserData }) => {
 
         {isLoggedIn && (
           <>
-            <NavLink to="/dorm" className="link">
-              <div className="nav-txt">Hangar</div>
+            <NavLink to="/dorm" className="button mx-2">
+              <div className="button-txt">Hangar</div>
             </NavLink>
-            <NavLink to="/map" className="link">
-              <div className="nav-txt">Explore!</div>
+            <NavLink to="/map" className="button mx-2">
+              <div className="button-txt">Explore!</div>
             </NavLink>
-            <NavLink to="/ship" className="link">
-              <div className="nav-txt">Ship</div>
+            <NavLink to="/ship" className="button mx-2">
+              <div className="button-txt">Ship</div>
             </NavLink>
           </>
         )}
@@ -99,8 +88,8 @@ const Navbar = ({ userData, setUserData }) => {
               </>
             )}
 
-            <button className="logout" onClick={logOut}>
-              <div>Log Out</div>
+            <button className="button m-3" onClick={logOut}>
+              <div className="button-txt">Log Out</div>
             </button>
           </div>
         )}

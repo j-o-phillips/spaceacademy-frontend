@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "../assets/css/Register.css";
 import { useNavigate } from "react-router-dom";
+import { register } from "../controllers/auth";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -17,28 +18,7 @@ const Register = () => {
       re_password: rePassword,
     };
 
-    const response = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/learn/register/`,
-      {
-        method: "POST",
-        headers: {
-          Authorization:
-            "Basic " +
-            btoa(
-              `${import.meta.env.VITE_APP_USER}:${
-                import.meta.env.VITE_APP_PASSWORD
-              }`
-            ),
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
-    if (!response.ok) {
-      throw new Error("An error in the response");
-    }
-
-    const result = await response.json();
+    const result = await register(data);
     console.log(result);
     navigate("/login");
   };

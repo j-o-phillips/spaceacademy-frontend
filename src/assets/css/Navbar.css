@@ -16,39 +16,6 @@
   margin: 10px;
 }
 
-.link {
-  align-items: center;
-  margin: 10px;
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  border: 2px solid white;
-  transform: skewX(-20deg);
-}
-
-.nav-txt {
-  transform: skewX(20deg);
-  padding: 0 2vmin;
-  text-decoration: none;
-  color: white;
-}
-
-.logout {
-  padding: 5px;
-  border: solid 2px white;
-  background-color: #363636;
-  color: white;
-  cursor: pointer;
-
-  margin: 10px;
-  transform: skewX(-20deg);
-}
-
-.logout > div {
-  transform: skewX(20deg);
-  padding: 0 5px;
-}
-
 .usercred-container {
   display: flex;
   align-items: center;

@@ -204,8 +204,8 @@ const CardDetails = () => {
             })}
           </Accordion>
           <div className="unlock-datacard-container">
-            <button className="unlock-datacard" onClick={handleUnlockDatacard}>
-              <div>Unlock Datacard</div>
+            <button className="button my-3" onClick={handleUnlockDatacard}>
+              <div className="button-txt">Unlock Datacard</div>
             </button>
           </div>
         </div>

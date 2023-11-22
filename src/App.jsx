@@ -25,7 +25,7 @@ function App() {
           <div className="nav">
             <NavBar userData={userData} setUserData={setUserData} />
           </div>
-          <div className="page">
+          <div className="page h-100">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/register" element={<Register />} />

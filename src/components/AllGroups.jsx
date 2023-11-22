@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { Link } from "react-router-dom";
+import { createHangar } from "../controllers/hangar";
 
 const AllGroups = ({ setHangarMembers, setCurrentHangarId }) => {
   const [hangars, setHangars] = useState([]);
@@ -75,6 +76,7 @@ const AllGroups = ({ setHangarMembers, setCurrentHangarId }) => {
     console.log(result);
     setCount((prev) => prev + 1);
   };
+
   return (
     <div className="d-flex flex-column align-items-center">
       <h3 className="my-3">All Hangars</h3>
@@ -86,8 +88,8 @@ const AllGroups = ({ setHangarMembers, setCurrentHangarId }) => {
             value={newHangarName}
             onChange={(e) => setNewHangarName(e.target.value)}
           />
-          <button className="mt-2 link create-hangar" onClick={createHangar}>
-            <div className="nav-txt">Create</div>
+          <button className="mt-3 button create-hangar" onClick={createHangar}>
+            <div className="button-txt">Create</div>
           </button>
         </div>
       </div>

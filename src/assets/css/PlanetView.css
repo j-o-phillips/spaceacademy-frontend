@@ -3,18 +3,6 @@
   justify-content: center;
 }
 
-.choose-cat-btn {
-  margin: 10px;
-  border: 2px solid white;
-  background-color: transparent;
-  color: white;
-  transform: skewX(-20deg);
-}
-
-.choose-cat-btn-txt {
-  transform: skewX(20deg);
-}
-
 .datacard-container {
   display: flex;
 }
@@ -24,6 +12,7 @@
   margin: 10px;
   width: 15rem;
   height: 15rem;
+  border-radius: 10px;
 }
 
 .datacard-link {
