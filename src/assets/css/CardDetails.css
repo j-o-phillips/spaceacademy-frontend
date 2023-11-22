@@ -66,3 +66,17 @@
 .unlock-datacard > div {
   transform: skewX(20deg);
 }
+
+.alert {
+  height: 20vmin;
+  width: 50vmin;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  color: white;
+}

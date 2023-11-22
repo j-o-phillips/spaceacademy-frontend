@@ -1,5 +1,13 @@
 .full-page {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-
   background-color: #363636;
+}
+
+.nav {
+  width: 100%;
+}
+.page {
+  height: 100%;
 }

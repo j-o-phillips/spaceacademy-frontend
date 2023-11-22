@@ -13,7 +13,7 @@ const Login = ({ setUserData }) => {
     };
 
     const response = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/learn/login`,
+      `${import.meta.env.VITE_BACKEND_URL}/learn/login/`,
       {
         method: "POST",
         headers: {

@@ -45,7 +45,7 @@ const Navbar = ({ userData, setUserData }) => {
     const authToken = localStorage.getItem("auth_token");
     console.log(authToken);
     const response = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/learn/logout`,
+      `${import.meta.env.VITE_BACKEND_URL}/learn/logout/`,
       {
         method: "POST",
         headers: {
@@ -75,16 +75,13 @@ const Navbar = ({ userData, setUserData }) => {
         {isLoggedIn && (
           <>
             <NavLink to="/dorm" className="link">
-              <div className="nav-txt">Dormitory</div>
+              <div className="nav-txt">Hangar</div>
             </NavLink>
             <NavLink to="/map" className="link">
-              <div className="nav-txt">Map</div>
+              <div className="nav-txt">Explore!</div>
             </NavLink>
             <NavLink to="/ship" className="link">
               <div className="nav-txt">Ship</div>
-            </NavLink>
-            <NavLink to="/help" className="link">
-              <div className="nav-txt">Help</div>
             </NavLink>
           </>
         )}

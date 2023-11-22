@@ -3,7 +3,6 @@
   color: white;
   height: 100%;
   justify-content: space-between;
-  background-color: aqua;
 }
 
 .all-groups-container {
@@ -64,9 +63,9 @@
 
 .profile-card {
   border: 2px solid white;
-  margin: 10px;
-  width: 15rem;
-  height: 15rem;
+
+  width: 11rem;
+  height: 11rem;
 
   border-radius: 10px;
 }

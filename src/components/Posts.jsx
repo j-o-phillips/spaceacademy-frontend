@@ -84,11 +84,9 @@ const Posts = ({ currentHangarId }) => {
     console.log(result);
   };
 
-  let item;
-
   return (
     <div className="d-flex h-100">
-      <div className="d-flex flex-column align-items-center justify-content-center user-post">
+      <div className="d-flex flex-column align-items-center justify-content-center user-post mx-4">
         <input
           type="text"
           className="my-1"
@@ -109,9 +107,9 @@ const Posts = ({ currentHangarId }) => {
           <div className="nav-txt">Post</div>
         </button>
       </div>
-      <div className="posts d-flex flex-column align-items-center ">
+      <div className="posts d-flex flex-column align-items-center mt-2">
         {posts.map((post) => (
-          <div className="post-card mt-4" key={post.id}>
+          <div className="post-card my-2" key={post.id}>
             {profileData.username === post.author ? (
               <button
                 onClick={() => {

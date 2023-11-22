@@ -1,5 +1,5 @@
 .overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
   color: white;
   position: absolute;
   bottom: 0;
@@ -10,5 +10,21 @@
   z-index: 100;
   display: block;
   margin: 10px;
+  border-radius: 15px;
+}
+
+.info-overlay {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 40vmin;
+  text-align: center;
+  z-index: 100;
+  display: block;
+  margin: 80px 10px 10px 10px;
+
   border-radius: 15px;
 }
