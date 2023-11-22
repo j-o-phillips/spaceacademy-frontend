@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import "../assets/css/NavBar.css";
+import "../assets/css/Navbar.css";
 import { useProfileContext } from "../context/ProfileContext";
 
 const Navbar = ({ userData, setUserData }) => {
