@@ -32,7 +32,7 @@ const ShipDetails = () => {
     console.log(equipment);
   };
   return (
-    <div className="ship-details">
+    <div className="ship-details mx-3">
       {shipDetails && (
         <>
           <h2 className="text-white my-3">Ship: {shipDetails.ship.name}</h2>
@@ -54,7 +54,7 @@ const ShipDetails = () => {
                 <td>{shipDetails.engines.level}</td>
                 <td>
                   <button
-                    className="button"
+                    className="button p-0"
                     onClick={(e) => {
                       console.log(e.target);
                       handleUpgrade("engines");
@@ -71,7 +71,7 @@ const ShipDetails = () => {
                 <td>{shipDetails.thrusters.level}</td>
                 <td>
                   <button
-                    className="button"
+                    className="button p-0"
                     onClick={(e) => {
                       console.log(e.target);
                       handleUpgrade("thrusters");
@@ -88,7 +88,7 @@ const ShipDetails = () => {
                 <td>{shipDetails.weapons.level}</td>
                 <td>
                   <button
-                    className="button"
+                    className="button p-0"
                     onClick={(e) => {
                       console.log(e.target);
                       handleUpgrade("weapons");
@@ -105,7 +105,7 @@ const ShipDetails = () => {
                 <td>{shipDetails.shields.level}</td>
                 <td>
                   <button
-                    className="button"
+                    className="button p-0"
                     onClick={(e) => {
                       console.log(e.target);
                       handleUpgrade("shields");

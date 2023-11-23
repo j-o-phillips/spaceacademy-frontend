@@ -9,6 +9,7 @@ import AllGroups from "../components/AllGroups";
 import GroupMembers from "../components/GroupMembers";
 import Posts from "../components/Posts";
 
+import stars from "../assets/img/Stars.png";
 const UserGroup = () => {
   const [userProfile, setUserProfile] = useState("");
   const [hangarMembers, setHangarMembers] = useState([]);
@@ -29,7 +30,10 @@ const UserGroup = () => {
   }, []);
 
   return (
-    <div className="dorm-container">
+    <div
+      className="dorm-container"
+      style={{ backgroundImage: `url(${stars})` }}
+    >
       <div className="all-groups-container">
         <AllGroups
           setHangarMembers={setHangarMembers}

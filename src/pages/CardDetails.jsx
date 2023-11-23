@@ -141,53 +141,61 @@ const CardDetails = () => {
                   <Accordion.Body>
                     <div className="accordion-body-container">
                       <div className="accordion-body">
-                        <div className="accordion-input">
-                          <input
-                            type="radio"
-                            id="choice_one"
-                            value={question.choice_one}
-                            name={question.id}
-                            onChange={() =>
-                              handleOnChange(question.id, question.choice_one)
-                            }
-                          />
-                          <label>{question.choice_one}</label>
-                        </div>
-                        <div className="accordion-input">
-                          <input
-                            type="radio"
-                            id="choice_two"
-                            value={question.choice_two}
-                            name={question.id}
-                            onChange={() =>
-                              handleOnChange(question.id, question.choice_two)
-                            }
-                          />
-                          <label>{question.choice_two}</label>
-                        </div>
-                        <div className="accordion-input">
-                          <input
-                            type="radio"
-                            id="choice_three"
-                            value={question.choice_three}
-                            name={question.id}
-                            onChange={() =>
-                              handleOnChange(question.id, question.choice_three)
-                            }
-                          />
-                          <label>{question.choice_three}</label>
-                        </div>
-                        <div className="accordion-input">
-                          <input
-                            type="radio"
-                            id="choice_four"
-                            value={question.choice_four}
-                            name={question.id}
-                            onChange={() =>
-                              handleOnChange(question.id, question.choice_four)
-                            }
-                          />
-                          <label>{question.choice_four}</label>
+                        <div className="d-flex flex-wrap">
+                          <div className="accordion-input">
+                            <input
+                              type="radio"
+                              id="choice_one"
+                              value={question.choice_one}
+                              name={question.id}
+                              onChange={() =>
+                                handleOnChange(question.id, question.choice_one)
+                              }
+                            />
+                            <label>{question.choice_one}</label>
+                          </div>
+                          <div className="accordion-input">
+                            <input
+                              type="radio"
+                              id="choice_two"
+                              value={question.choice_two}
+                              name={question.id}
+                              onChange={() =>
+                                handleOnChange(question.id, question.choice_two)
+                              }
+                            />
+                            <label>{question.choice_two}</label>
+                          </div>
+                          <div className="accordion-input">
+                            <input
+                              type="radio"
+                              id="choice_three"
+                              value={question.choice_three}
+                              name={question.id}
+                              onChange={() =>
+                                handleOnChange(
+                                  question.id,
+                                  question.choice_three
+                                )
+                              }
+                            />
+                            <label>{question.choice_three}</label>
+                          </div>
+                          <div className="accordion-input">
+                            <input
+                              type="radio"
+                              id="choice_four"
+                              value={question.choice_four}
+                              name={question.id}
+                              onChange={() =>
+                                handleOnChange(
+                                  question.id,
+                                  question.choice_four
+                                )
+                              }
+                            />
+                            <label>{question.choice_four}</label>
+                          </div>
                         </div>
                       </div>
                       <button

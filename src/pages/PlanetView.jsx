@@ -4,6 +4,8 @@ import Tilt from "react-parallax-tilt";
 import ChooseCat from "../components/ChooseCat";
 import { Link, useParams } from "react-router-dom";
 
+import stars from "../assets/img/Stars.png";
+
 import "../assets/css/PlanetView.css";
 
 const PlanetView = () => {
@@ -55,7 +57,10 @@ const PlanetView = () => {
   };
 
   return (
-    <div className="d-flex flex-column">
+    <div
+      className="d-flex flex-column"
+      style={{ backgroundImage: `url(${stars})` }}
+    >
       <nav className="choose-cat">
         {categories.map((category) => (
           <button

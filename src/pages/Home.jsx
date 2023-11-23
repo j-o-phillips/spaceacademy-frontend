@@ -18,7 +18,7 @@ const Home = () => {
         </div>
 
         <div
-          className="d-flex w-100 mt-5 rounded justify-content-center"
+          className="d-sm-flex w-100 mt-5 rounded justify-content-center"
           style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
         >
           <div className="text-white w-45 d-flex justify-content-center align-items-center m-4 ">
@@ -30,7 +30,7 @@ const Home = () => {
         </div>
 
         <div
-          className="d-flex w-100 mt-5 rounded justify-content-center"
+          className="d-sm-flex w-100 mt-5 rounded justify-content-center"
           style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
         >
           <div className="d-flex justify-content-center w-45 m-4">
@@ -45,7 +45,7 @@ const Home = () => {
         </div>
 
         <div
-          className="d-flex w-100 mt-5 rounded justify-content-center"
+          className="d-sm-flex w-100 mt-5 rounded justify-content-center"
           style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
         >
           <div className="text-white w-45 d-flex justify-content-center align-items-center m-4 ">

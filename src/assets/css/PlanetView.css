@@ -1,17 +1,20 @@
 .choose-cat {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .datacard-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .datacard {
   border: 2px solid white;
   margin: 10px;
-  width: 15rem;
-  height: 15rem;
+  width: 180px;
+  height: 200px;
   border-radius: 10px;
 }
 

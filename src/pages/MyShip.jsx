@@ -11,9 +11,12 @@ import stars from "../assets/img/Stars.png";
 
 const MyShip = () => {
   return (
-    <div className="container-fluid d-flex justify-content-around align-items-center h-100">
+    <div
+      className="container-fluid d-flex justify-content-around align-items-center h-100 my-4"
+      style={{ flexWrap: "wrap-reverse", backgroundImage: `url(${stars})` }}
+    >
       <ShipDetails />
-      <div className="canvas-container">
+      <div className="canvas-container ">
         <Canvas camera={{ position: [-263, 513, 318], fov: 25 }}>
           <Suspense fallback={<CanvasLoader />}>
             <OrbitControls />

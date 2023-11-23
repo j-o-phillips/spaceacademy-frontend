@@ -5,6 +5,8 @@ import "../assets/css/Navbar.css";
 import { useProfileContext } from "../context/ProfileContext";
 import { logout } from "../controllers/auth";
 
+import NavDropdown from "react-bootstrap/NavDropdown";
+
 const Navbar = ({ userData, setUserData }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
@@ -63,15 +65,24 @@ const Navbar = ({ userData, setUserData }) => {
 
         {isLoggedIn && (
           <>
-            <NavLink to="/dorm" className="button mx-2">
-              <div className="button-txt">Hangar</div>
-            </NavLink>
-            <NavLink to="/map" className="button mx-2">
-              <div className="button-txt">Explore!</div>
-            </NavLink>
-            <NavLink to="/ship" className="button mx-2">
-              <div className="button-txt">Ship</div>
-            </NavLink>
+            <div className="link-toggle">
+              <NavLink to="/dorm" className="button mx-2">
+                <div className="button-txt">Hangar</div>
+              </NavLink>
+              <NavLink to="/map" className="button mx-2">
+                <div className="button-txt">Explore!</div>
+              </NavLink>
+              <NavLink to="/ship" className="button mx-2">
+                <div className="button-txt">Ship</div>
+              </NavLink>
+            </div>
+            <div className="menu-toggle">
+              <NavDropdown title="Menu" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/dorm">Hangar</NavDropdown.Item>
+                <NavDropdown.Item href="/map">Map</NavDropdown.Item>
+                <NavDropdown.Item href="/ship">Ship</NavDropdown.Item>
+              </NavDropdown>
+            </div>
           </>
         )}
       </div>
@@ -81,10 +92,16 @@ const Navbar = ({ userData, setUserData }) => {
           <div className="usercred-container">
             {profileData && (
               <>
-                <p>username: {profileData.username}</p>
-                <p>💰: {profileData.profile.credits}</p>
-                <p>exp: {profileData.profile.experience}</p>
-                <p>🏆: {profileData.profile.prestige}</p>
+                <p className="rmv-on-collapse">👤: {profileData.username}</p>
+                <p className="rmv-on-collapse">
+                  💰: {profileData.profile.credits}
+                </p>
+                <p className="rmv-on-collapse">
+                  XP: {profileData.profile.experience}
+                </p>
+                <p className="rmv-on-collapse">
+                  🏆: {profileData.profile.prestige}
+                </p>
               </>
             )}
 

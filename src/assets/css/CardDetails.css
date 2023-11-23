@@ -25,6 +25,7 @@
 .accordion-body-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .accordion-body {
@@ -54,17 +55,7 @@
 .unlock-datacard-container {
   display: flex;
   justify-content: center;
-}
-.unlock-datacard {
-  transform: skewX(-20deg);
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  margin-top: 20px;
-}
-
-.unlock-datacard > div {
-  transform: skewX(20deg);
+  align-items: center;
 }
 
 .alert {

@@ -26,3 +26,31 @@
 .usercred-container > p {
   margin: 10px;
 }
+
+.link-toggle {
+  display: default;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+#basic-nav-dropdown {
+  color: white;
+}
+
+@media only screen and (max-width: 850px) {
+  .link-toggle {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .rmv-on-collapse {
+    display: none;
+  }
+}

@@ -80,33 +80,38 @@ const AllGroups = ({ setHangarMembers, setCurrentHangarId }) => {
   return (
     <div className="d-flex flex-column align-items-center">
       <h3 className="my-3">All Hangars</h3>
-      <div className="hangar-create-card">
-        <div className="hangar-details">
-          <input
-            type="text"
-            placeholder="name"
-            value={newHangarName}
-            onChange={(e) => setNewHangarName(e.target.value)}
-          />
-          <button className="mt-3 button create-hangar" onClick={createHangar}>
-            <div className="button-txt">Create</div>
-          </button>
-        </div>
-      </div>
-      {hangars &&
-        hangars.map((hangar) => (
-          <Tilt className="hangar-card" key={hangar.id}>
-            <div
-              className="hangar-details"
-              onClick={() => {
-                setCurrentHangarId(hangar.id);
-                getHangarMembers(hangar.id);
-              }}
+      <div>
+        <div className="hangar-create-card">
+          <div className="hangar-details">
+            <input
+              type="text"
+              placeholder="name"
+              value={newHangarName}
+              onChange={(e) => setNewHangarName(e.target.value)}
+            />
+            <button
+              className="mt-3 button create-hangar"
+              onClick={createHangar}
             >
-              <h5>{hangar.name}</h5>
-            </div>
-          </Tilt>
-        ))}
+              <div className="button-txt">Create</div>
+            </button>
+          </div>
+        </div>
+        {hangars &&
+          hangars.map((hangar) => (
+            <Tilt className="hangar-card" key={hangar.id}>
+              <div
+                className="hangar-details"
+                onClick={() => {
+                  setCurrentHangarId(hangar.id);
+                  getHangarMembers(hangar.id);
+                }}
+              >
+                <h5>{hangar.name}</h5>
+              </div>
+            </Tilt>
+          ))}
+      </div>
     </div>
   );
 };

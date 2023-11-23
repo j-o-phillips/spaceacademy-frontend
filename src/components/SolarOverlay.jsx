@@ -7,8 +7,7 @@ const SolarOverlay = ({ currentPlanet }) => {
     <>
       <div className="overlay">
         <h4 className="my-3">Planet: {currentPlanet.frontendName}</h4>
-        <p>Cards discovered: Unknown </p>
-        <p>Cards left to discover: Unknown </p>
+
         <Link to={`${currentPlanet.djangoName}`} className="button my-4">
           <div className="button-txt">Land</div>
         </Link>
