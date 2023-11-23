@@ -56,9 +56,9 @@ const Navbar = ({ userData, setUserData }) => {
   };
   return (
     <div className="nav-container">
-      <div className="links">
+      <div className="d-flex align-items-center">
         <NavLink to="/" className="logo">
-          SA
+          🚀
         </NavLink>
 
         {isLoggedIn && (
@@ -82,9 +82,9 @@ const Navbar = ({ userData, setUserData }) => {
             {profileData && (
               <>
                 <p>username: {profileData.username}</p>
-                <p>credits: {profileData.profile.credits}</p>
-                <p>experience: {profileData.profile.experience}</p>
-                <p>prestige: {profileData.profile.prestige}</p>
+                <p>💰: {profileData.profile.credits}</p>
+                <p>exp: {profileData.profile.experience}</p>
+                <p>🏆: {profileData.profile.prestige}</p>
               </>
             )}
 
@@ -95,11 +95,11 @@ const Navbar = ({ userData, setUserData }) => {
         )}
         {!isLoggedIn && (
           <>
-            <NavLink to="/register" className="link">
-              <div className="nav-txt">Sign up</div>
+            <NavLink to="/register" className="button m-3">
+              <div className="button-txt">Sign up</div>
             </NavLink>
-            <NavLink to="/login" className="link">
-              <div className="nav-txt">Login</div>
+            <NavLink to="/login" className="button m-3">
+              <div className="button-txt">Login</div>
             </NavLink>
           </>
         )}

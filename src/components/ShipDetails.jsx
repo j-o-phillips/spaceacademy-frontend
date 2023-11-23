@@ -33,19 +33,20 @@ const ShipDetails = () => {
   };
   return (
     <div className="ship-details">
-      <table className="table table-dark table-striped">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">Name</th>
-            <th scope="col">Power</th>
-            <th scope="col">Level</th>
-            <th scope="col">Upgrade</th>
-          </tr>
-        </thead>
-        <tbody>
-          {shipDetails && (
-            <>
+      {shipDetails && (
+        <>
+          <h2 className="text-white my-3">Ship: {shipDetails.ship.name}</h2>
+          <table className="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Power</th>
+                <th scope="col">Level</th>
+                <th scope="col">Upgrade</th>
+              </tr>
+            </thead>
+            <tbody>
               <tr>
                 <th scope="row">Engines:</th>
                 <td>{shipDetails.engines.name}</td>
@@ -53,13 +54,13 @@ const ShipDetails = () => {
                 <td>{shipDetails.engines.level}</td>
                 <td>
                   <button
-                    className="upgrade-button"
+                    className="button"
                     onClick={(e) => {
                       console.log(e.target);
                       handleUpgrade("engines");
                     }}
                   >
-                    <div>Cost: 100</div>
+                    <div className="button-txt">Cost: 100</div>
                   </button>
                 </td>
               </tr>
@@ -70,13 +71,13 @@ const ShipDetails = () => {
                 <td>{shipDetails.thrusters.level}</td>
                 <td>
                   <button
-                    className="upgrade-button"
+                    className="button"
                     onClick={(e) => {
                       console.log(e.target);
                       handleUpgrade("thrusters");
                     }}
                   >
-                    <div>Cost: 100</div>
+                    <div className="button-txt">Cost: 100</div>
                   </button>
                 </td>
               </tr>
@@ -87,13 +88,13 @@ const ShipDetails = () => {
                 <td>{shipDetails.weapons.level}</td>
                 <td>
                   <button
-                    className="upgrade-button"
+                    className="button"
                     onClick={(e) => {
                       console.log(e.target);
                       handleUpgrade("weapons");
                     }}
                   >
-                    <div>Cost: 100</div>
+                    <div className="button-txt">Cost: 100</div>
                   </button>
                 </td>
               </tr>
@@ -104,20 +105,20 @@ const ShipDetails = () => {
                 <td>{shipDetails.shields.level}</td>
                 <td>
                   <button
-                    className="upgrade-button"
+                    className="button"
                     onClick={(e) => {
                       console.log(e.target);
                       handleUpgrade("shields");
                     }}
                   >
-                    <div>Cost: 100</div>
+                    <div className="button-txt">Cost: 100</div>
                   </button>
                 </td>
               </tr>
-            </>
-          )}
-        </tbody>
-      </table>
+            </tbody>
+          </table>
+        </>
+      )}
     </div>
   );
 };

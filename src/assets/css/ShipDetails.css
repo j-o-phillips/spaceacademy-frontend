@@ -1,14 +1,3 @@
 .ship-details {
   width: 45%;
 }
-
-.upgrade-button {
-  border: 2px solid white;
-  transform: skewX(-20deg);
-  background: transparent;
-  color: white;
-}
-
-.upgrade-button > div {
-  transform: skewX(20deg);
-}

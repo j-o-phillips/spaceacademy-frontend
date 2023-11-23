@@ -8,6 +8,7 @@ import Planet4 from "./planets/Planet4";
 import Planet5 from "./planets/Planet5";
 import Planet6 from "./planets/Planet6";
 import Planet7 from "./planets/Planet7";
+import ShipModel from "./ShipModel";
 
 const SolarSystem3D = ({ setCurrentPlanet }) => {
   return (

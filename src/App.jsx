@@ -15,13 +15,16 @@ import MyShip from "./pages/MyShip";
 import Flight from "./pages/Flight";
 
 import NavBar from "./components/Navbar";
+import ShipModel from "./components/ShipModel";
+
+import stars from "./assets/img/Stars.png";
 function App() {
   const [userData, setUserData] = useState({});
 
   return (
     <main className="App">
       <>
-        <div className="full-page">
+        <div className="full-page" style={{ backgroundImage: `url(${stars})` }}>
           <div className="nav">
             <NavBar userData={userData} setUserData={setUserData} />
           </div>

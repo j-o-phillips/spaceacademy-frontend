@@ -2,18 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #363636;
+  background-color: rgb(29, 28, 28);
   color: white;
   height: 60px;
-  border-bottom: 2px solid white;
+
   width: 100%;
 }
 
 .logo {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 35px;
   color: white;
   margin: 10px;
+  text-decoration: none;
 }
 
 .usercred-container {

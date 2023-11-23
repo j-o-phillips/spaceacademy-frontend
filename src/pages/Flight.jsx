@@ -1,7 +1,14 @@
+import { Canvas } from "@react-three/fiber";
 import React from "react";
+import FlightScene from "../components/FlightScene";
+import ShipModel from "../components/ShipModel";
 
 const Flight = () => {
-  return <div>Flight</div>;
+  return (
+    <Canvas>
+      <FlightScene />
+    </Canvas>
+  );
 };
 
 export default Flight;
