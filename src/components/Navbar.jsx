@@ -59,13 +59,16 @@ const Navbar = ({ userData, setUserData }) => {
   return (
     <div className="nav-container">
       <div className="d-flex align-items-center">
-        <NavLink to="/" className="logo">
+        <NavLink to="/" className="logo mx-3">
           🚀
         </NavLink>
 
         {isLoggedIn && (
           <>
             <div className="link-toggle">
+              <NavLink to="/home" className="button mx-2">
+                <div className="button-txt">Home</div>
+              </NavLink>
               <NavLink to="/dorm" className="button mx-2">
                 <div className="button-txt">Hangar</div>
               </NavLink>
@@ -78,6 +81,7 @@ const Navbar = ({ userData, setUserData }) => {
             </div>
             <div className="menu-toggle">
               <NavDropdown title="Menu" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/home">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/dorm">Hangar</NavDropdown.Item>
                 <NavDropdown.Item href="/map">Map</NavDropdown.Item>
                 <NavDropdown.Item href="/ship">Ship</NavDropdown.Item>
@@ -97,7 +101,8 @@ const Navbar = ({ userData, setUserData }) => {
                   💰: {profileData.profile.credits}
                 </p>
                 <p className="rmv-on-collapse">
-                  XP: {profileData.profile.experience}
+                  <span className="XP">XP</span> :{" "}
+                  {profileData.profile.experience}
                 </p>
                 <p className="rmv-on-collapse">
                   🏆: {profileData.profile.prestige}

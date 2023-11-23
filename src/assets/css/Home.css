@@ -4,6 +4,18 @@ img {
   border-radius: 20px;
 }
 
+.hero {
+  height: 30vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 5em;
+}
+
 @media only screen and (max-width: 1024px) {
   img {
     height: 200px;

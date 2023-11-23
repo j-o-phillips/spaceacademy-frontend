@@ -10,8 +10,8 @@ const Planet4 = ({ setCurrentPlanet }) => {
   useFrame((state, delta) => {
     const angle = state.clock.elapsedTime;
     planet4Mesh.current.rotation.y += delta * 0.8;
-    planet4Mesh.current.position.x = Math.sin(angle * 0.5) * 11;
-    planet4Mesh.current.position.z = Math.cos(angle * 0.5) * 11;
+    planet4Mesh.current.position.x = Math.sin(angle * 0.3 + 5) * 11;
+    planet4Mesh.current.position.z = Math.cos(angle * 0.3 + 5) * 11;
   });
 
   const handleSelect = () => {

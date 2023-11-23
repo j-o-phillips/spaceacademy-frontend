@@ -18,6 +18,7 @@ import NavBar from "./components/Navbar";
 import ShipModel from "./components/ShipModel";
 
 import stars from "./assets/img/Stars.png";
+import Dashboard from "./pages/Dashboard";
 function App() {
   const [userData, setUserData] = useState({});
 
@@ -36,6 +37,7 @@ function App() {
                 path="/login"
                 element={<Login setUserData={setUserData} />}
               />
+              <Route path="/home" element={<Dashboard />} />
               <Route path="/dorm" element={<UserGroup />} />
               <Route path="/map" element={<SolarSystemMap />} />
               <Route path="/ship" element={<MyShip />} />

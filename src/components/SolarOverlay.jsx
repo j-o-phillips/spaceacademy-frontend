@@ -12,12 +12,6 @@ const SolarOverlay = ({ currentPlanet }) => {
           <div className="button-txt">Land</div>
         </Link>
       </div>
-      <div className="info-overlay">
-        <p>
-          You've arrived in an uncharted solar system. Select the planets to
-          land and discover their secrets...{" "}
-        </p>
-      </div>
     </>
   );
 };

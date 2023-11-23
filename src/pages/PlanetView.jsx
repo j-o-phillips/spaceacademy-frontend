@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Tilt from "react-parallax-tilt";
 import ChooseCat from "../components/ChooseCat";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 import stars from "../assets/img/Stars.png";
 
@@ -13,6 +13,31 @@ const PlanetView = () => {
   const [datacards, setDataCards] = useState([]);
   const [categoryId, setCategoryId] = useState("");
   const { planetName } = useParams();
+
+  let cardBackground;
+  switch (planetName) {
+    case "mathematics":
+      cardBackground = "linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb)";
+      break;
+    case "history":
+      cardBackground = "linear-gradient(144deg, #57ff40, #f3d642 50%, #eb9900)";
+      break;
+    case "biology":
+      cardBackground = "linear-gradient(144deg, #ff4094, #424ef3 50%, #00ebe4)";
+      break;
+    case "physics":
+      cardBackground = "linear-gradient(144deg, #fffd40, #42f398 50%, #0093eb)";
+      break;
+    case "music":
+      cardBackground = "linear-gradient(144deg, #ffb940, #ffb940 50%, #eb0001)";
+      break;
+    case "geography":
+      cardBackground = "linear-gradient(144deg, #5040ff, #40ffa6 50%, #00caeb)";
+      break;
+    case "computer_science":
+      cardBackground = "linear-gradient(144deg, #40feff, #405aff 50%, #3a0271)";
+      break;
+  }
 
   useEffect(() => {
     const getCategories = async () => {
@@ -80,12 +105,25 @@ const PlanetView = () => {
       </h3>
       <div className="datacard-container">
         {datacards.map((datacard) => (
-          <Tilt className="datacard" key={datacard.id}>
+          <Tilt
+            className="datacard"
+            style={{
+              backgroundImage: cardBackground,
+            }}
+            key={datacard.id}
+          >
             <Link className="datacard-link" to={`${categoryId}/${datacard.id}`}>
               <div className="datacard-details">
                 <div>{datacard.title}</div>
-                <div>Value: {datacard.reward_credits}</div>
-                <div>Exp: {datacard.reward_exp}</div>
+                <div>
+                  <div className="d-inline mx-2">
+                    💰 {datacard.reward_credits}
+                  </div>
+                  <div className="d-inline mx-3">
+                    <span className="XP">XP</span>
+                    {datacard.reward_exp}
+                  </div>
+                </div>
               </div>
             </Link>
           </Tilt>

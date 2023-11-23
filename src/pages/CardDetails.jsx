@@ -7,12 +7,17 @@ import { useProfileContext } from "../context/ProfileContext";
 import "../assets/css/CardDetails.css";
 
 const CardDetails = () => {
+  const auth_token = localStorage.getItem("auth_token");
+  const navigate = useNavigate();
+  if (!auth_token) {
+    navigate("/");
+  }
+
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [messageCount, setMessageCount] = useState(0);
   const { cardId, categoryId, planetName } = useParams();
   const { profileData, setProfileData } = useProfileContext();
-  const navigate = useNavigate();
 
   let count = -1;
 

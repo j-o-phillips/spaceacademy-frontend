@@ -12,9 +12,9 @@ const Home = () => {
       className="container-fluid home-container"
       style={{ backgroundImage: `url(${stars})` }}
     >
-      <div className="container d-flex flex-column align-items-center h-100 mt-5">
-        <div>
-          <h1 className="text-white mt-5">Space Academy</h1>
+      <div className="container d-flex flex-column align-items-center mt-5">
+        <div className="hero">
+          <h1 className="mt-5 title">Space Academy</h1>
         </div>
 
         <div

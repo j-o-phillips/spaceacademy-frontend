@@ -84,6 +84,7 @@ const AllGroups = ({ setHangarMembers, setCurrentHangarId }) => {
         <div className="hangar-create-card">
           <div className="hangar-details">
             <input
+              style={{ width: "150px" }}
               type="text"
               placeholder="name"
               value={newHangarName}

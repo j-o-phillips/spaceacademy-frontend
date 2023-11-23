@@ -1,8 +1,14 @@
+@font-face {
+  font-family: nasal;
+  src: url("./assets/fonts/nasalization-free/nasalization-rg.otf");
+}
+
 .full-page {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background-color: #363636;
+  font-family: nasal;
 }
 .button {
   align-items: center;
@@ -25,4 +31,19 @@
   padding: 0 2vmin;
   text-decoration: none;
   color: white;
+  font-family: nasal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: nasal;
+}
+
+.XP {
+  color: rgb(149, 0, 255);
 }

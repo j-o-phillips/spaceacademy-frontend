@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "../assets/css/UserGroup.css";
 import { useProfileContext } from "../context/ProfileContext";
@@ -10,14 +10,20 @@ import GroupMembers from "../components/GroupMembers";
 import Posts from "../components/Posts";
 
 import stars from "../assets/img/Stars.png";
+
 const UserGroup = () => {
+  const auth_token = localStorage.getItem("auth_token");
+  const navigate = useNavigate();
+  if (!auth_token) {
+    navigate("/");
+  }
+
   const [userProfile, setUserProfile] = useState("");
   const [hangarMembers, setHangarMembers] = useState([]);
   const [currentHangarId, setCurrentHangarId] = useState("");
   const { profileData, setProfileData } = useProfileContext();
 
   useEffect(() => {
-    const auth_token = localStorage.getItem("auth_token");
     const getUserProfile = async () => {
       const auth_token = localStorage.getItem("auth_token");
       const result = await getUserProfileFunc(auth_token);
