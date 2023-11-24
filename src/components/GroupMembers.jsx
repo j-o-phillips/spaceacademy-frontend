@@ -49,7 +49,7 @@ const GroupMembers = ({ hangarMembers, currentHangarId }) => {
   };
   return (
     <div className="d-flex flex-column align-items-center h-100 ">
-      <div className="d-flex overflow_auto h-100">
+      <div className="d-flex overflow_auto h-100 flex-wrap justify-content-center ">
         {hangarMembers.length === 0 ? (
           <div className="message-container d-flex flex-column justify-content-center text-center mx-5">
             <h4>
@@ -85,13 +85,13 @@ const GroupMembers = ({ hangarMembers, currentHangarId }) => {
       {currentHangarId && (
         <div>
           <button
-            className="button bg-transparent mb-4 mx-3"
+            className="button bg-transparent mb-4 mx-1 mt-2"
             onClick={joinHangar}
           >
             <div className="button-txt">Join Hangar</div>
           </button>
           <button
-            className="button bg-transparent mb-4 mx-3"
+            className="button bg-transparent mb-4 mx-1 mt-2"
             onClick={leaveHangar}
           >
             <div className="button-txt">Leave Hangar</div>

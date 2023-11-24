@@ -29,7 +29,6 @@ const UserGroup = () => {
       const result = await getUserProfileFunc(auth_token);
       setUserProfile(result);
       setProfileData(result);
-      console.log(result);
     };
 
     getUserProfile();

@@ -9,7 +9,7 @@
 .post-card {
   border: 2px solid white;
   border-radius: 10px;
-  width: 40vmin;
+  width: 300px;
   display: flex;
   flex-direction: column;
   position: relative;

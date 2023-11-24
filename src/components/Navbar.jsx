@@ -37,7 +37,6 @@ const Navbar = ({ userData, setUserData }) => {
 
       const result = await response.json();
       setProfileData(result);
-      console.log(result);
     };
     if (auth_token) {
       getUserProfile();

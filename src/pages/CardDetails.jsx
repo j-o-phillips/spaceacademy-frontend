@@ -204,6 +204,7 @@ const CardDetails = () => {
                         </div>
                       </div>
                       <button
+                        className="button"
                         onClick={() => {
                           handleSubmitAnswer(question.id);
                         }}
@@ -226,25 +227,33 @@ const CardDetails = () => {
       {messageCount === 1 && (
         <div className="alert d-flex flex-column align-items-center justify-content-around">
           <h4>Looks like you've already answered this question...</h4>
-          <button onClick={() => setMessageCount(0)}>Close</button>
+          <button className="button" onClick={() => setMessageCount(0)}>
+            <div className="button-txt">Close</div>
+          </button>
         </div>
       )}
       {messageCount === 2 && (
         <div className="alert d-flex flex-column align-items-center justify-content-around">
           <h4>That's correct!</h4>
-          <button onClick={() => setMessageCount(0)}>Close</button>
+          <button className="button" onClick={() => setMessageCount(0)}>
+            <div className="button-txt">Close</div>
+          </button>
         </div>
       )}
       {messageCount === 3 && (
         <div className="alert d-flex flex-column align-items-center justify-content-around">
           <h4>Sorry that's incorrect.</h4>
-          <button onClick={() => setMessageCount(0)}>Close</button>
+          <button className="button" onClick={() => setMessageCount(0)}>
+            <div className="button-txt">Close</div>
+          </button>
         </div>
       )}
       {messageCount === 4 && (
         <div className="alert d-flex flex-column align-items-center justify-content-around">
           <h4>Answer ALL the questions to unlock the datacard</h4>
-          <button onClick={() => setMessageCount(0)}>Close</button>
+          <button className="button" onClick={() => setMessageCount(0)}>
+            <div className="button-txt">Close</div>
+          </button>
         </div>
       )}
     </>

@@ -1,18 +1,24 @@
 .dorm-container {
   display: flex;
   color: white;
-  height: 100%;
+
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .all-groups-container {
-  height: 98%;
-  overflow: auto;
+  height: 89vh;
+
   width: 250px;
   background-color: rgba(59, 59, 59, 0.7);
   margin: 10px;
   border-radius: 15px;
+}
+
+.all-groups-sub-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .member-post-container {
@@ -24,17 +30,17 @@
 }
 
 .member-container {
-  height: 98%;
-  flex: 2;
+  height: 40vh;
+
   border-radius: 15px;
-  overflow-x: auto;
+
   background-color: rgba(59, 59, 59, 0.7);
   margin-bottom: 5px;
 }
 
 .post-container {
-  flex: 3;
-  overflow: auto;
+  height: 48vh;
+
   background-color: rgba(59, 59, 59, 0.7);
   margin-top: 5px;
   border-radius: 15px;
@@ -89,13 +95,44 @@
   color: white;
 }
 
-@media only screen and (max-width: 1060px) {
+@media only screen and (max-width: 1220px) {
   .all-groups-container {
-    height: 300px;
-    overflow-x: auto;
-    width: 100vw;
+    height: 100%;
+
+    width: 100%;
     background-color: rgba(59, 59, 59, 0.7);
     margin: 10px;
     border-radius: 15px;
+  }
+
+  .all-groups-sub-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hangar-create-card-cont {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .member-container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .text-area {
+    width: 250px;
+    height: 100px;
+  }
+
+  .user-post > input {
+    width: 140px;
   }
 }

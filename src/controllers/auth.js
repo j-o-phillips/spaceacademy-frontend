@@ -42,9 +42,6 @@ export const login = async (data) => {
       body: JSON.stringify(data),
     }
   );
-  if (!response.ok) {
-    throw new Error("An error in the response");
-  }
 
   const result = await response.json();
   return result;

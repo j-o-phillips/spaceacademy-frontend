@@ -51,8 +51,8 @@ const Register = () => {
             setRePassword(e.target.value);
           }}
         />
-        <button onClick={handleRegister}>
-          <div>Register User</div>
+        <button className="button" onClick={handleRegister}>
+          <div className="button-txt">Register User</div>
         </button>
       </div>
       {messageCount === 1 && (

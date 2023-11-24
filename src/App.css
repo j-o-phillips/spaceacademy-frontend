@@ -26,6 +26,10 @@
     0.125rem 0.125rem 1rem rgba(193, 32, 214, 0.5);
 }
 
+.button:active {
+  transform: translateY(0.2em) skewX(-20deg);
+}
+
 .button-txt {
   transform: skewX(20deg);
   padding: 0 2vmin;

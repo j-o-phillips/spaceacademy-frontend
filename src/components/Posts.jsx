@@ -85,7 +85,7 @@ const Posts = ({ currentHangarId }) => {
   };
 
   return (
-    <div className="d-flex h-100">
+    <div className="d-flex h-100 flex-wrap post-sub-cont">
       <div className="d-flex flex-column align-items-center justify-content-center user-post mx-4">
         <input
           type="text"
@@ -98,7 +98,8 @@ const Posts = ({ currentHangarId }) => {
           name="newPost"
           cols="50"
           rows="6"
-          className="rounded"
+          placeholder="Content"
+          className="rounded text-area"
           value={userPost}
           onChange={(e) => setUserPost(e.target.value)}
         ></textarea>
