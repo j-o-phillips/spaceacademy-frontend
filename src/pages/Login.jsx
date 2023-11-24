@@ -18,7 +18,7 @@ const Login = ({ setUserData }) => {
     localStorage.setItem("auth_token", result.token);
     setUserData(result);
     console.log(result);
-    navigate("/dorm");
+    navigate("/home");
   };
 
   return (

@@ -36,3 +36,15 @@
   border-radius: 17px;
   width: 100%;
 }
+
+.planet-canvas-cont {
+  height: 500px;
+  width: 500px;
+}
+
+@media only screen and (max-width: 525px) {
+  .planet-canvas-cont {
+    height: 300px;
+    width: 300px;
+  }
+}

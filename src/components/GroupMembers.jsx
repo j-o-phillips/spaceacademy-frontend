@@ -2,6 +2,8 @@ import React from "react";
 import Tilt from "react-parallax-tilt";
 
 const GroupMembers = ({ hangarMembers, currentHangarId }) => {
+  const cardBackground =
+    "linear-gradient(144deg, #40feff, #405aff 50%, #3a0271)";
   const joinHangar = async (questionId) => {
     const auth_token = localStorage.getItem("auth_token");
 
@@ -57,12 +59,24 @@ const GroupMembers = ({ hangarMembers, currentHangarId }) => {
           </div>
         ) : (
           hangarMembers.map((profile) => (
-            <Tilt className="profile-card m-4 mt-5" key={profile.id}>
-              <div className="profile-details">
+            <Tilt
+              className="datacard "
+              style={{
+                backgroundImage: cardBackground,
+                height: "170px",
+                width: "150px",
+              }}
+              key={profile.id}
+            >
+              <div className="datacard-details">
                 <h5>{profile.username}</h5>
-                <p>Credits: {profile.credits}</p>
-                <p>Exp: {profile.experience}</p>
-                <p>Prestige: {profile.prestige}</p>
+                <div>
+                  <p>💰: {profile.credits}</p>
+                  <p>
+                    <span className="XP">XP</span>: {profile.experience}
+                  </p>
+                  <p>🏆: {profile.prestige}</p>
+                </div>
               </div>
             </Tilt>
           ))

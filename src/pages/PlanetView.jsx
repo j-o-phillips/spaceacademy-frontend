@@ -7,6 +7,9 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import stars from "../assets/img/Stars.png";
 
 import "../assets/css/PlanetView.css";
+import { Canvas } from "@react-three/fiber";
+import CloseUp from "../components/planets/CloseUp";
+import { OrbitControls } from "@react-three/drei";
 
 const PlanetView = () => {
   const [categories, setCategories] = useState([]);
@@ -129,6 +132,25 @@ const PlanetView = () => {
           </Tilt>
         ))}
       </div>
+      {datacards.length === 0 ? (
+        <div className="d-flex justify-content-center">
+          <div className="planet-canvas-cont">
+            <Canvas>
+              <ambientLight intensity={0.5} />
+
+              <OrbitControls
+                enableZoom={false}
+                maxPolarAngle={Math.PI / 2}
+                minPolarAngle={Math.PI / 2}
+              />
+              <directionalLight intensity={7} position={[8, 10, 2]} />
+              <CloseUp planetName={planetName} />
+            </Canvas>
+          </div>
+        </div>
+      ) : (
+        false
+      )}
     </div>
   );
 };
