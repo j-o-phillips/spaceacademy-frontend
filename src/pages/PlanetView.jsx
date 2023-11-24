@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Tilt from "react-parallax-tilt";
 import ChooseCat from "../components/ChooseCat";
@@ -10,6 +10,7 @@ import "../assets/css/PlanetView.css";
 import { Canvas } from "@react-three/fiber";
 import CloseUp from "../components/planets/CloseUp";
 import { OrbitControls } from "@react-three/drei";
+import CanvasLoader from "../components/Loader";
 
 const PlanetView = () => {
   const [categories, setCategories] = useState([]);
@@ -134,15 +135,17 @@ const PlanetView = () => {
         <div className="d-flex justify-content-center">
           <div className="planet-canvas-cont">
             <Canvas>
-              <ambientLight intensity={0.5} />
+              <Suspense fallback={<CanvasLoader />}>
+                <ambientLight intensity={0.5} />
 
-              <OrbitControls
-                enableZoom={false}
-                maxPolarAngle={Math.PI / 2}
-                minPolarAngle={Math.PI / 2}
-              />
-              <directionalLight intensity={7} position={[8, 10, 2]} />
-              <CloseUp planetName={planetName} />
+                <OrbitControls
+                  enableZoom={false}
+                  maxPolarAngle={Math.PI / 2}
+                  minPolarAngle={Math.PI / 2}
+                />
+                <directionalLight intensity={7} position={[8, 10, 2]} />
+                <CloseUp planetName={planetName} />
+              </Suspense>
             </Canvas>
           </div>
         </div>
