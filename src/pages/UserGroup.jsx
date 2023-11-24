@@ -48,6 +48,7 @@ const UserGroup = () => {
       <div className="member-post-container">
         <div className="member-container">
           <GroupMembers
+            setHangarMembers={setHangarMembers}
             hangarMembers={hangarMembers}
             currentHangarId={currentHangarId}
           />

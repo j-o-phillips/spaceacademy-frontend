@@ -1,10 +1,11 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
+import { getHangarMembers } from "../controllers/hangar";
 
-const GroupMembers = ({ hangarMembers, currentHangarId }) => {
+const GroupMembers = ({ hangarMembers, currentHangarId, setHangarMembers }) => {
   const cardBackground =
     "linear-gradient(144deg, #40feff, #405aff 50%, #3a0271)";
-  const joinHangar = async (questionId) => {
+  const joinHangar = async () => {
     const auth_token = localStorage.getItem("auth_token");
 
     const response = await fetch(
@@ -23,10 +24,11 @@ const GroupMembers = ({ hangarMembers, currentHangarId }) => {
     }
 
     const result = await response.json();
-    console.log(result);
+
+    setHangarMembers(result.data);
   };
 
-  const leaveHangar = async (questionId) => {
+  const leaveHangar = async () => {
     const auth_token = localStorage.getItem("auth_token");
 
     const response = await fetch(
@@ -45,11 +47,12 @@ const GroupMembers = ({ hangarMembers, currentHangarId }) => {
     }
 
     const result = await response.json();
-    console.log(result);
+    setHangarMembers(result.data);
   };
+
   return (
-    <div className="d-flex flex-column align-items-center h-100 ">
-      <div className="d-flex overflow_auto h-100 flex-wrap justify-content-center ">
+    <div className="d-flex flex-column align-items-center justify-content-around h-100 ">
+      <div className="d-flex overflow_auto flex-wrap justify-content-center ">
         {hangarMembers.length === 0 ? (
           <div className="message-container d-flex flex-column justify-content-center text-center mx-5">
             <h4>

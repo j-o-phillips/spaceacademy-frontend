@@ -59,7 +59,6 @@ const PlanetView = () => {
 
       const result = await response.json();
       setCategories(result.data);
-      console.log(result.data);
     };
 
     getCategories();
@@ -81,7 +80,6 @@ const PlanetView = () => {
 
     const result = await response.json();
     setDataCards(result.data);
-    console.log(result.data);
   };
 
   return (

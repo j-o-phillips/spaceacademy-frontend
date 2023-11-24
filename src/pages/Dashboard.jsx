@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { getUserProfileFunc } from "../controllers/userProfile";
+import { useProfileContext } from "../context/ProfileContext";
 import stars from "../assets/img/Stars.png";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const cardBackground =
     "linear-gradient(144deg, #40feff, #405aff 50%, #3a0271)";
+  const { profileData, setProfileData } = useProfileContext();
   const [userProfile, setUserProfile] = useState("");
 
   useEffect(() => {
@@ -14,8 +16,7 @@ const Dashboard = () => {
       const auth_token = localStorage.getItem("auth_token");
       const result = await getUserProfileFunc(auth_token);
       setUserProfile(result);
-
-      console.log(result);
+      setProfileData(result);
     };
 
     getUserProfile();

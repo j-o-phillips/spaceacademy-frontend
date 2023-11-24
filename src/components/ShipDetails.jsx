@@ -26,8 +26,6 @@ const ShipDetails = () => {
 
       const result = await response.json();
       setShipDetails(result);
-      console.log(result);
-      console.log(shipDetails);
     };
 
     getShipDetails();
@@ -62,7 +60,6 @@ const ShipDetails = () => {
 
       const result = await response.json();
       if (result.message === `${equipment} upgraded`) {
-        console.log("upgraded");
         setCount((prev) => prev + 1);
         setMessageCount(2);
         const profile = await getUserProfileFunc(auth_token);

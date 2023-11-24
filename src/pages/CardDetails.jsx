@@ -40,7 +40,6 @@ const CardDetails = () => {
 
       const result = await response.json();
       setQuestions(result.data);
-      console.log(result.data);
     };
 
     getQuestions();
@@ -111,7 +110,6 @@ const CardDetails = () => {
     const profile = await getUserProfileFunc(auth_token);
     setProfileData(profile);
 
-    console.log(result);
     navigate(`/map/${planetName}`);
   };
 

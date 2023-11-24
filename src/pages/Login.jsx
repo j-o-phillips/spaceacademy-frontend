@@ -4,9 +4,9 @@ import { login } from "../controllers/auth";
 
 const Login = ({ setUserData }) => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState();
+  const [username, setUsername] = useState("");
   const [messageCount, setMessageCount] = useState(0);
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     const data = {
@@ -15,7 +15,7 @@ const Login = ({ setUserData }) => {
     };
 
     const result = await login(data);
-    console.log(result);
+
     if (!result.token) {
       setMessageCount(1);
       throw new Error("Invalid Credentials");

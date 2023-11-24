@@ -27,7 +27,7 @@ const Posts = ({ currentHangarId }) => {
         }
 
         const result = await response.json();
-        console.log(result.data);
+
         setPosts(result.data);
       }
     };
@@ -58,7 +58,7 @@ const Posts = ({ currentHangarId }) => {
     }
 
     const result = await response.json();
-    console.log(result);
+
     setCount((prev) => prev + 1);
   };
 
@@ -81,7 +81,6 @@ const Posts = ({ currentHangarId }) => {
     }
 
     const result = await response.json();
-    console.log(result);
   };
 
   return (
