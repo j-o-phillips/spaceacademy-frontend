@@ -84,7 +84,7 @@ const Posts = ({ currentHangarId }) => {
   };
 
   return (
-    <div className="d-flex h-100 flex-wrap post-sub-cont">
+    <div className="d-flex h-100 flex-wrap  post-sub-cont">
       <div className="d-flex flex-column align-items-center justify-content-center user-post mx-4">
         <input
           type="text"
