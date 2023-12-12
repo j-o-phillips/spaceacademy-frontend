@@ -152,7 +152,7 @@ To incorporate my knowledge of Three.js and React Three Fiber
 
 I wanted to create something slightly different from a traditional CRUD app, so i decided to make a gamified learning platform with the goal of incentivising children and young adults to learn. Users would answer questions on a variety of topics, receiving rewards for correct answers which could be used to gain other perks. I was taking a course in three.js alongside the GA course so I also wanted to incorporate this knowledge, and I knew I could make a simple model of a solar system with clickable planets etc, so I decided on a Sci-Fi theme. I made an ERD which is included below, and decided to split the project into two Django apps, one for the learning part and the other for the game.
 
-[![ERD Screen Shot][erd-screenshot]]
+![ERD Screen Shot][erd-screenshot]
 
 One of the decisions I had to make was who would provide the questions. On the one hand, I could make it so all users could post questions for other users. This allows for a huge and ever growing variety of questions, but makes it very difficult to moderate and make the game fair. On the other hand, I as the developer could write all the questions and be sure they give fair rewards, but this is a lot of extra work and limits the growth of the app. In the end I decided to take the latter option, with plans for the future to incorporate another type of user (moderators), who would be trusted individuals who would both update the questions and ensure the rewards were fair.
 
@@ -192,7 +192,7 @@ class SignupView(APIView):
                     user.save()
 
                     user = User.objects.get(id=user.id)
-                    print(user.username)
+                 
                     user_profile = UserProfile(user=user, username=user.username, first_name='', last_name='', experience=0, credits=0, prestige=0)
                     user_profile.save()
                     #assign ship
@@ -239,8 +239,6 @@ class checkCardAnswers(APIView):
 
                 userAnswer = Answer.objects.filter(user=user).get(question=question.id)
                 if userAnswer:
-                    print(question.correct_answer)
-                    print(userAnswer)
                     if str(question.correct_answer) == str(userAnswer):
                         print('correct')
                     else:
@@ -306,12 +304,12 @@ As mentioned above, my lack of thorough planning when it came to designing my ap
 
 I am very proud of the way the UI looks for this project, particularly the 3D elements. Prior to this project I had never used react-three-fiber, having only coded in three.js and the speed and ease that that framework allowed was a joy to work with.
 
-I am also proud of the amount of content I was able to include in the app, exceeding the projects requirements for 2 data models. Due to my enjoyment and the efficiency of working with Django-Rest-Framework, I was able to implement 16 data models, many of which incorporated full CRUD functionality., along with an app that, although small, feels like a complete, stand-alone project.
+I am also proud of the amount of content I was able to include in the app, exceeding the projects requirements for 2 data models. Due to my enjoyment and the efficiency of working with Django-Rest-Framework, I was able to implement 16 data models, many of which incorporated full CRUD functionality, along with an app that, although small, feels like a complete, stand-alone project.
 
 These were my key takeaways for this project:
 
-- **I really enjoy working with python/Django**
-- **I really enjoy working with react-three-fiber**
+- **I really enjoy working with python/Django and have gained a basic understanding of this framework**
+- **I learned how to implement Three.js into a React project with React Three Fiber**
 - **I aim to plan my responsive design more thoroughly**
 - **I aim to become adept with a css framework rather than always using custom css**
 
@@ -341,7 +339,7 @@ Distributed under the MIT License.
 
 Jake Phillips - jphillips@gmail.com
 
-Portfolio Link: [Portfolio](https://github.com/jake-o-phillips/spaceacademy-backend)
+Portfolio Link: [Portfolio](https://www.jakephillips.eu/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
