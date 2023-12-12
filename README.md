@@ -87,6 +87,11 @@ This was fourth and final project of my General Assembly SEI course. The require
 
 ## Getting Started
 
+For ease of deployment, this project is split into two repositories, frontend and backend.
+This is the frontend repo. Find the backend repo [here](https://github.com/j-o-phillips/spaceacademy-backend).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### Prerequisites
 
 - npm
@@ -96,14 +101,29 @@ This was fourth and final project of my General Assembly SEI course. The require
 
 ### Installation
 
-1. Clone the repo
+Running this app locally requires running the frontend and backend servers simultaneously. 
+1. Clone the frontend repo
    ```sh
    git clone https://github.com/jake-o-phillips/spaceacademy-frontend.git
    ```
-2. Install NPM packages
+2. Clone the backend repo
+   ```sh
+   git clone https://github.com/jake-o-phillips/spaceacademy-backend.git
+   ```
+   
+3. Install NPM packages in the frontend directory
    ```sh
    npm install
    ```
+4. Run the backend server from within the backend directory
+   ```sh
+   python3 manage.py runserver
+   ```
+5. Run the frontend server from within the frontend directory
+   ```sh
+   npm run dev
+   ```
+6. Navigate to http://localhost:5173/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
